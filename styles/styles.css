@@ -22,11 +22,9 @@ body {
 .container {
     display: flex;
     flex: 0 0 auto;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     gap: 10px;
-    /* height: fit-content; */
     height: 100%;
-    overflow: auto;
     position: relative;
     width: auto;
     gap: 64px;
@@ -73,7 +71,7 @@ body {
     gap: 16px;
     height: min-content;
     padding: 0px;
-    width: min-content;
+    width:100%;
 }
 
 .prompt-box {
@@ -92,10 +90,9 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 0;
     position: relative;
-    width: 610px;
-    max-width: 1200px;
+    width: 100%;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -108,7 +105,50 @@ body {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: none;
+    padding-left: 15px;
 }
+
+.prompt-hints {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.prompt-hints div {
+    margin-right: 5px;
+}
+
+.disabled { 
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.prompt-hint {
+    appearance: none;
+    font-size: 14px;
+    border: 0;
+    background: none;
+    border-bottom-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    text-transform: none;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font-weight: 300;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.prompt-hint:hover {
+    background-color: #F32E98;
+    color: white;
+}
+
 
 .prompt-box input {
     font-family: 'Manrope', sans-serif;
@@ -133,9 +173,11 @@ body {
     padding: 0px;
     position: relative;
     width: 100%;
+    margin-top: 10px;
 }
 
 .generate-button {
+    appearance: none;
     place-content: flex-start;
     align-items: flex-start;
     background-color: #F32E98;
@@ -152,6 +194,8 @@ body {
     width: min-content;
     will-change: transform;
     cursor: pointer;
+    border: 0;
+    color: white;
 }
 
 .generate {
@@ -235,13 +279,13 @@ body {
 }
 
 .output-content {
-    width: 512px;
-    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-shrink: 0;
     transform: none;
+    align-items: center;
 }
 
 .output-content img {
@@ -253,6 +297,11 @@ body {
     font-weight: bold;
     white-space: pre-line;
     color: white;
+}
+
+.error {
+    color: #ff1538;
+    font-weight: bold;;
 }
 
 @media (max-width: 1200px) {
@@ -326,4 +375,8 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.button-width-auto {
+    width: auto;
 }
