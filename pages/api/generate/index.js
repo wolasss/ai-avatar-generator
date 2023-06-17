@@ -7,7 +7,7 @@ if (!process.env.HF_AUTH_KEY) {
 
 const generateAction = async (req, res) => {
   const input = JSON.parse(req.body).input;
-  const normalizedInput = input.replace(/adam/gi, 'wolas');
+  const normalizedInput = input.replace(/Martyna/g, 'martyna');
 
   try {
     const image = await HuggingFaceApi.generatePrompt(normalizedInput);

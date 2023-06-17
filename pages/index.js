@@ -61,21 +61,19 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>AI Avatar Generator | buildspace</title>
+        <title>AI Avatar Generator</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>wolas silly pictures generator</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Turn me into anyone you want! Make sure you refer to me as "Adam" in the prompt</h2>
           </div>
           {
             !img && <>
                
                 <div className="prompt-container">
-                  <input className="prompt-box" value={input} onChange={onChange} placeholder="e.g. Portrait of Adam as a detective, epic scene, highly detailed, digital illustration, 4k" />
+                  <input className="prompt-box" value={input} onChange={onChange} placeholder="e.g. Portrait of Martyna as a detective, epic scene, highly detailed, digital illustration, 4k" />
                 </div>
                 <div className={"prompt-hints" + (isGenerating ? " disabled": "") }>
                   {
@@ -110,18 +108,6 @@ const Home = () => {
             <button onClick={onRestart} className="generate-button button-width-auto">Get something different</button>
           </div>
         )}
-      </div>
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-avatar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
       </div>
     </div>
   );
